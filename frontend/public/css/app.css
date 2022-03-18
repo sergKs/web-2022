@@ -1,14 +1,42 @@
-html, body {
-    font-family: 'Noto Sans', sans-serif;
-}
-
 .price {
-    background-color: red;
-    color: #fff;
-    padding: 5px;
+    font-weight: bold;
+    font-size: 22px;
 }
 
 .product-link {
     color: #333;
     text-decoration: none;
+}
+
+.product-link img {
+    max-width: 60%;
+}
+
+header nav {
+    padding: 0 15px;
+    background-color: #fff;
+}
+
+.jumbotron {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+main {
+    margin-bottom: 5rem;
+}
+
+footer {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    background-color: #333;
+    color: #fff;
+}
+
+footer a {
+    color: #fff;
+}
+
+.logo {
+    width: 150px;
 }

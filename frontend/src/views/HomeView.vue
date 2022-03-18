@@ -1,33 +1,39 @@
 <template>
   <div class="home">
-    <section class="jumbotron text-center">
-      <div class="container">
-        <h1>Самые лучшие коты, только в шляпах!</h1>
-        <p class="lead text-muted">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet animi aspernatur at cupiditate ducimus eaque eius ex ipsa ipsam nihil nulla provident quia, quo sequi, suscipit tempora velit veniam voluptas!
-        </p>
-      </div>
+    <section>
+      <b-carousel
+          id="carousel-1"
+          :interval="4000"
+          controls
+          indicators
+          img-width="1200"
+          img-height="300"
+      >
+        <b-carousel-slide img-src="https://magizoo.ru/upload/iblock/bfb/Hills_banner_SPRL_4_1_Cat_1800x616px.jpg"></b-carousel-slide>
+      </b-carousel>
     </section>
-    <div class="album py-5 bg-light">
-      <div class="container">
 
-        <div class="row">
-          <div class="col-md-4" v-for="item in products">
-            <router-link :to="{name: 'Product', params: {id: item.id}}">
-              <div class="card mb-4 shadow-sm">
-                <img class="bd-placeholder-img card-img-top" src="https://thumbs.dreamstime.com/z/%D0%BA%D0%BE%D1%82-%D0%B2-%D1%88%D0%BB%D1%8F%D0%BF%D0%B5-%D0%B8-%D1%81%D0%B2%D1%8F%D0%B7%D0%B8-127719637.jpg" />
-                <div class="card-body">
-                  <h4>{{ item.name }}</h4>
-                  <p>Красивая шляпа, много отзывов, покупка, бесплатно доставить.</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-success btn-cart">Купить</button>
-                    </div>
-                    <small class="price">{{ item.price }} ₽</small>
-                  </div>
+    <div class="container mt-5">
+
+      <h4 class="mb-5">Самые просматриваемые</h4>
+
+      <div class="row">
+        <div class="col-md-3" v-for="item in products">
+          <div class="mb-4">
+            <section class="content">
+              <router-link :to="{name: 'Product', params: {id: item.id}}" class="product-link">
+                <div>
+                  <img class="bd-placeholder-img card-img-top" src="https://avatars.mds.yandex.net/get-mpic/4322107/img_id5771335809193590584.jpeg/orig" />
                 </div>
+                <p>{{ item.name }}</p>
+              </router-link>
+            </section>
+            <section>
+              <p class="price">{{ item.price }} ₽</p>
+              <div class="btn-group">
+                <button type="button" class="btn btn-warning btn-cart">В корзину</button>
               </div>
-            </router-link>
+            </section>
           </div>
         </div>
       </div>
@@ -43,22 +49,22 @@ export default {
       products: [
         {
           id: 1,
-          name: 'Шляпа на кота, ручная работа',
+          name: 'Комкующийся наполнитель Van Cat Pine, 10 кг',
           price: 100
         },
         {
           id: 2,
-          name: 'Шляпа на кота, ручная работа',
+          name: 'Комкующийся наполнитель Van Cat Pine, 10 кг',
           price: 200
         },
         {
           id: 3,
-          name: 'Шляпа на кота, ручная работа',
+          name: 'Комкующийся наполнитель Van Cat Pine, 10 кг',
           price: 500
         },
         {
           id: 4,
-          name: 'Шляпа на кота, ручная работа',
+          name: 'Комкующийся наполнитель Van Cat Pine, 10 кг',
           price: 6000
         }
       ]

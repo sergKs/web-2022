@@ -1,35 +1,28 @@
 <template>
   <div id="app">
     <header>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-          <router-link to="/" class="navbar-brand">Компания КОТЭ</router-link>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <router-link to="/about" class="nav-link">О нас</router-link>
-              </li>
-              <li class="nav-item">
-                <router-link to="/contact" class="nav-link">Контакты</router-link>
-              </li>
-            </ul>
-            <form class="d-flex">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
-          </div>
+      <b-navbar toggleable="lg" type="light">
+        <div class="container">
+          <b-navbar-brand href="#">
+            <img src="https://alllogos.ru/images/logotip-purina.jpg" class="logo" />
+          </b-navbar-brand>
+          <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+          <b-collapse id="nav-collapse" is-nav>
+            <b-navbar-nav>
+              <router-link class="nav-link" :to="{name: 'Catalog'}">Каталог</router-link>
+              <router-link class="nav-link" :to="{name: 'About'}">О нас</router-link>
+              <router-link class="nav-link" :to="{name: 'Contact'}">Контакты</router-link>
+            </b-navbar-nav>
+          </b-collapse>
         </div>
-      </nav>
+      </b-navbar>
     </header>
 
     <main>
       <router-view/>
     </main>
 
-    <footer class="text-muted">
+    <footer>
       <div class="container">
         <div class="d-flex justify-content-between">
           <p>&copy; КБ-191, 2022</p>
