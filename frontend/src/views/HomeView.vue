@@ -26,29 +26,11 @@ export default {
   components: {Slider, Product},
   data() {
     return {
-      products: [
-        {
-          id: 1,
-          name: 'Комкующийся наполнитель Van Cat Pine, 10 кг',
-          price: 100
-        },
-        {
-          id: 2,
-          name: 'Комкующийся наполнитель Van Cat Pine, 10 кг',
-          price: 200
-        },
-        {
-          id: 3,
-          name: 'Комкующийся наполнитель Van Cat Pine, 10 кг',
-          price: 500
-        },
-        {
-          id: 4,
-          name: 'Комкующийся наполнитель Van Cat Pine, 10 кг',
-          price: 6000
-        }
-      ]
+      products: []
     }
+  },
+  created() {
+
   }
 }
 </script>
