@@ -12,6 +12,9 @@
               <router-link class="nav-link" :to="{name: 'Catalog'}">Каталог</router-link>
               <router-link class="nav-link" :to="{name: 'About'}">О нас</router-link>
               <router-link class="nav-link" :to="{name: 'Contact'}">Контакты</router-link>
+
+              <a @click="logout" class="nav-link" v-show="user !== null">Иван И.</a>
+              <router-link class="nav-link" :to="{name: 'Contact'}" v-show="user == null">Войти</router-link>
             </b-navbar-nav>
           </b-collapse>
         </div>
@@ -34,3 +37,24 @@
     </footer>
   </div>
 </template>
+
+<script>
+  export default {
+    name: 'App',
+    data() {
+      return {
+        user: null
+      }
+    },
+    created() {
+      this.user = JSON.parse(localStorage.getItem('user'))
+    },
+    methods: {
+      logout(event) {
+        localStorage.removeItem('user')
+        location.reload()
+        event.preventDefault()
+      }
+    }
+  }
+</script>

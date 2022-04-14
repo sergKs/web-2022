@@ -11,7 +11,8 @@
     <section>
       <p class="price">{{ product.price }} ₽</p>
       <div class="btn-group">
-        <button type="button" class="btn btn-warning btn-cart">В корзину</button>
+        <button type="button" class="btn btn-warning btn-cart" v-show="!product.inCart">В корзину</button>
+        <button type="button" class="btn btn-success btn-cart" v-show="product.inCart">Добавлен в корзину</button>
       </div>
     </section>
   </section>
