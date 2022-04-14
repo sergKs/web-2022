@@ -32,7 +32,10 @@ const routes = [
   {
     path: '/login',
     name: 'Login',
-    component: LoginView
+    component: LoginView,
+    meta: {
+      layout: 'login-layout'
+    }
   },
 ]
 

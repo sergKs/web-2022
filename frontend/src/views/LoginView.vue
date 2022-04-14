@@ -1,27 +1,24 @@
 <template>
   <div class="container">
-    <div class="row">
-      <div class="col-md-4 offset-4">
-        <h1 class="text-center">Авторизация</h1>
+    <section class="login-form">
+      <h1 class="text-center">Авторизация</h1>
 
-        <form @submit="signIn" method="post">
-          <div class="mb-4">
-            <label>Логин</label><br>
-            <input name="login" type="text" class="form-control" placeholder="Логин" v-model="login">
-            <div class="error text-danger">{{ errors.login }}</div>
-          </div>
-          <div class="mb-4">
-            <label>Пароль</label><br>
-            <input name="password" type="password" class="form-control" placeholder="Пароль" v-model="password">
-            <div class="error text-danger">{{ errors.password }}</div>
-          </div>
-          <div class="form-group text-center">
-            <button type="submit" class="btn btn-success w-100">Войти</button>
-          </div>
-        </form>
-
-      </div>
-    </div>
+      <form @submit="signIn" method="post">
+        <div class="mb-4">
+          <label>Логин</label><br>
+          <input name="login" type="text" class="form-control" placeholder="Логин" v-model="login">
+          <div class="error text-danger">{{ errors.login }}</div>
+        </div>
+        <div class="mb-4">
+          <label>Пароль</label><br>
+          <input name="password" type="password" class="form-control" placeholder="Пароль" v-model="password">
+          <div class="error text-danger">{{ errors.password }}</div>
+        </div>
+        <div class="form-group text-center">
+          <button type="submit" class="btn btn-success w-100">Войти</button>
+        </div>
+      </form>
+    </section>
   </div>
 </template>
 
@@ -67,3 +64,10 @@ export default {
   }
 }
 </script>
+
+<style>
+  .login-form {
+    width: 400px;
+    margin: 25px auto 0;
+  }
+</style>
