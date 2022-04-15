@@ -23,6 +23,11 @@ class ProductController extends Controller
             'id' => 3,
             'name' => 'Комкующийся наполнитель Van Cat Pine, 10 кг',
             'price' => 200
+        ],
+        [
+            'id' => 4,
+            'name' => 'Товар 4',
+            'price' => 1500
         ]
     ];
 

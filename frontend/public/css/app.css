@@ -22,11 +22,9 @@ header nav {
     padding-bottom: 5rem;
 }
 
-main {
-    margin-bottom: 5rem;
-}
-
 footer {
+    height: 150px;
+    margin-top: -150px;
     padding-top: 3rem;
     padding-bottom: 3rem;
     background-color: #333;
@@ -39,4 +37,15 @@ footer a {
 
 .logo {
     width: 150px;
+}
+
+.wrapper {
+    min-height: 100vh;
+    padding-bottom: 190px;
+}
+
+.cart {
+    text-align: right;
+    margin-left: auto;
+    background-color: #ddd;
 }

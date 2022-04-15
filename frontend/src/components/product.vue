@@ -11,8 +11,7 @@
     <section>
       <p class="price">{{ product.price }} ₽</p>
       <div class="btn-group">
-        <button type="button" class="btn btn-warning btn-cart" v-show="!product.inCart">В корзину</button>
-        <button type="button" class="btn btn-success btn-cart" v-show="product.inCart">Добавлен в корзину</button>
+        <button @click="addToCart" type="button" class="btn btn-warning btn-cart">В корзину</button>
       </div>
     </section>
   </section>
@@ -21,7 +20,24 @@
 <script>
 export default {
   name: "product",
-  props: ['product']
+  props: ['product'],
+  data() {
+    return {
+      count: 0
+    }
+  },
+  methods: {
+    addToCart() {
+      const item = {
+        id: this.product.id,
+        count: 1
+      }
+      this.$http.post('/cart/add-to-cart', item)
+        .then((response) => {
+          this.$store.commit("addItem", {id: 10})
+        })
+    }
+  }
 }
 </script>
 
